@@ -4,13 +4,18 @@ import com.example.challenge.network.dto.WeatherDTO
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface WeatherAPI {
 
-    @GET("v1/forecast?latitude={lat}&longitude={long}&hourly=temperature_2m,pressure_msl,relativehumidity_2m,windspeed_10m&daily=weathercode&timezone=UTC")
+    @GET("v1/forecast")
     suspend fun getWeatherData(
-        @Path(value = "lat") latitude : Double,
-        @Path(value = "long") longitude : Double
+        @Query("latitude") lat: Double,
+        @Query("longitude") long: Double,
+        @Query("hourly") hourly: List<String>,
+        @Query("daily") daily: String,
+        @Query("timezone") timezone: String
     ) : Response<WeatherDTO>
+
 
 }
