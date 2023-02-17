@@ -7,15 +7,15 @@ import com.example.challenge.network.dto.HourlyUnitsDTO
 
 
 data class WeatherModel(
-    val daily: DailyDTO,
-    val dailyUnits: DailyUnitsDTO,
-    val elevation: Double,
-    val generationtimeMs: Double,
-    val hourlyDTO: HourlyDTO,
-    val hourlyUnitsDTO: HourlyUnitsDTO,
-    val latitude: Double,
-    val longitude: Double,
-    val timezone: String,
-    val timezoneAbbreviation: String,
-    val utcOffsetSeconds: Int
+    var daily: DailyDTO,
+//    var dailyUnits: DailyUnitsDTO,
+//    var elevation: Double,
+//    var generationtimeMs: Double,
+    var hourly: HourlyDTO,
+//    var hourlyUnitsDTO: HourlyUnitsDTO,
+    var latitude: Double,
+    var longitude: Double,
+    var timezone: String,
+//    var timezoneAbbreviation: String,
+//    var utcOffsetSeconds: Int
 )

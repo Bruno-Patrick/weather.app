@@ -12,7 +12,7 @@ interface WeatherAPI {
     suspend fun getWeatherData(
         @Query("latitude") lat: Double,
         @Query("longitude") long: Double,
-        @Query("hourly") hourly: List<String>,
+        @Query("hourly") hourly: String,
         @Query("daily") daily: String,
         @Query("timezone") timezone: String
     ) : Response<WeatherDTO>

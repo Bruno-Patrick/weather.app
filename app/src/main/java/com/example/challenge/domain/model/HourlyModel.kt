@@ -2,9 +2,9 @@ package com.example.challenge.domain.model
 
 
 data class HourlyModel(
-    val pressureMsl: List<Double>,
-    val relativehumidity2m: List<Int>,
-    val temperature2m: List<Double>,
-    val time: List<String>,
-    val windspeed10m: List<Double>
+    var pressureMsl: List<Double>,
+    var relativehumidity2m: List<Int>,
+    var temperature2m: List<Double>,
+    var time: List<String>,
+    var windspeed10m: List<Double>
 )
