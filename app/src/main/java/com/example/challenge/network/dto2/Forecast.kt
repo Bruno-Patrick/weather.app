@@ -1,0 +1,9 @@
+package com.example.challenge.network.dto2
+
+
+import com.google.gson.annotations.SerializedName
+
+data class Forecast(
+    @SerializedName("forecastday")
+    val forecastday: List<Forecastday>
+)
