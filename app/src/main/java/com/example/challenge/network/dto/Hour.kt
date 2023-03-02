@@ -1,4 +1,4 @@
-package com.example.challenge.network.dto2
+package com.example.challenge.network.dto
 
 
 import com.google.gson.annotations.SerializedName

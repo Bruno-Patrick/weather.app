@@ -1,4 +1,4 @@
-package com.example.challenge.domain.model2
+package com.example.challenge.domain.model
 
 
 

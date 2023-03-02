@@ -1,16 +1,16 @@
-package com.example.challenge.domain.model2
+package com.example.challenge.domain.model
 
 
 
 data class Day(
-    var avgtempC: Double,
-    var maxtempC: Double,
-    var mintempC: Double,
+    var avgtemp_c: Float,
+    var maxtemp_c: Float,
+    var mintemp_c: Float,
 //    val avghumidity: Double,
 //    val avgtempF: Double,
 //    val avgvisKm: Double,
 //    val avgvisMiles: Double,
-//    val condition: Condition,
+    val condition: Condition,
 //    val dailyChanceOfRain: Int,
 //    val dailyChanceOfSnow: Int,
 //    val dailyWillItRain: Int,

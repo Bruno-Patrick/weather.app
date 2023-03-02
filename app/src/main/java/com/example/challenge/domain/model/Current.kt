@@ -1,13 +1,13 @@
-package com.example.challenge.domain.model2
+package com.example.challenge.domain.model
 
 
 
 data class Current(
-    var feelslikeC: Double,
+    var feelslike_c: Float,
     var lastUpdated: String,
-    var tempC: Double,
+    var temp_c: Float,
 //    val cloud: Int,
-//    val condition: Condition,
+    var condition: Condition,
 //    val feelslikeF: Double,
 //    val gustKph: Double,
 //    val gustMph: Double,

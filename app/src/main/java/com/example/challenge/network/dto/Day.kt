@@ -1,4 +1,4 @@
-package com.example.challenge.network.dto2
+package com.example.challenge.network.dto
 
 
 import com.google.gson.annotations.SerializedName
@@ -7,15 +7,15 @@ data class Day(
 //    @SerializedName("avghumidity")
 //    val avghumidity: Double,
     @SerializedName("avgtemp_c")
-    val avgtempC: Double,
+    val avgtemp_c: Float,
 //    @SerializedName("avgtemp_f")
 //    val avgtempF: Double,
 //    @SerializedName("avgvis_km")
 //    val avgvisKm: Double,
 //    @SerializedName("avgvis_miles")
 //    val avgvisMiles: Double,
-//    @SerializedName("condition")
-//    val condition: Condition,
+    @SerializedName("condition")
+    val condition: Condition,
 //    @SerializedName("daily_chance_of_rain")
 //    val dailyChanceOfRain: Int,
 //    @SerializedName("daily_chance_of_snow")
@@ -25,7 +25,7 @@ data class Day(
 //    @SerializedName("daily_will_it_snow")
 //    val dailyWillItSnow: Int,
     @SerializedName("maxtemp_c")
-    val maxtempC: Double,
+    val maxtemp_c: Float,
 //    @SerializedName("maxtemp_f")
 //    val maxtempF: Double,
 //    @SerializedName("maxwind_kph")
@@ -33,7 +33,7 @@ data class Day(
 //    @SerializedName("maxwind_mph")
 //    val maxwindMph: Double,
     @SerializedName("mintemp_c")
-    val mintempC: Double,
+    val mintemp_c: Float,
 //    @SerializedName("mintemp_f")
 //    val mintempF: Double,
 //    @SerializedName("totalprecip_in")

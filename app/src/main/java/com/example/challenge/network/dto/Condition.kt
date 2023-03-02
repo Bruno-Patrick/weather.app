@@ -1,11 +1,11 @@
-package com.example.challenge.network.dto2
+package com.example.challenge.network.dto
 
 
 import com.google.gson.annotations.SerializedName
 
 data class Condition(
-    @SerializedName("code")
-    val code: Int,
+//    @SerializedName("code")
+//    val code: Int,
     @SerializedName("icon")
     val icon: String,
     @SerializedName("text")

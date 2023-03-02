@@ -1,4 +1,4 @@
-package com.example.challenge.network.dto2
+package com.example.challenge.network.dto
 
 
 import com.google.gson.annotations.SerializedName
@@ -12,6 +12,6 @@ data class Forecastday(
 //    val dateEpoch: Int,
     @SerializedName("day")
     val day: Day,
-    @SerializedName("hour")
-    val hour: List<Hour>
+//    @SerializedName("hour")
+//    val hour: List<Hour>
 )

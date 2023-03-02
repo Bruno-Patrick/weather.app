@@ -1,4 +1,4 @@
-package com.example.challenge.network.dto2
+package com.example.challenge.network.dto
 
 
 import com.google.gson.annotations.SerializedName
@@ -6,10 +6,10 @@ import com.google.gson.annotations.SerializedName
 data class Current(
 //    @SerializedName("cloud")
 //    val cloud: Int,
-//    @SerializedName("condition")
-//    val condition: Condition,
+    @SerializedName("condition")
+    val condition: Condition,
     @SerializedName("feelslike_c")
-    val feelslikeC: Double,
+    val feelslike_c: Float,
 //    @SerializedName("feelslike_f")
 //    val feelslikeF: Double,
 //    @SerializedName("gust_kph")
@@ -33,7 +33,7 @@ data class Current(
 //    @SerializedName("pressure_mb")
 //    val pressureMb: Double,
     @SerializedName("temp_c")
-    val tempC: Double,
+    val temp_c: Float,
 //    @SerializedName("temp_f")
 //    val tempF: Double,
 //    @SerializedName("uv")

@@ -1,31 +1,44 @@
 package com.example.challenge.network.api
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.google.gson.*
+import com.google.gson.stream.JsonReader
+import com.google.gson.stream.JsonToken
+import com.google.gson.stream.JsonWriter
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
+import java.io.IOException
+import java.lang.reflect.Type
 
 const val API_KEY : String = "63837e27b47d4b8c81582817232102"
-val API_URLS : List<String> = listOf("https://api.open-meteo.com/","http://api.weatherapi.com")
+const val API_URL : String = "http://api.weatherapi.com"
 
-fun client() =
+private val okHttpClient =
     OkHttpClient.Builder()
-        .connectTimeout(10,TimeUnit.SECONDS)
         .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         })
         .build()
 
-fun gson() : Gson = GsonBuilder().create()
+private val gson = GsonBuilder()
+    .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+    .registerTypeAdapter(Double::class.java, object : JsonSerializer<Double> {
+        override fun serialize(
+            src: Double,
+            typeOfSrc: Type?,
+            context: JsonSerializationContext?
+        ): JsonElement {
+            return JsonPrimitive("%.2f".format(src))
+        }
+    }).create()
 
 fun retrofit() : Retrofit =
     Retrofit.Builder()
-        .baseUrl(API_URLS[1].toString())
-        .client(client())
-        .addConverterFactory(GsonConverterFactory.create(gson()))
+        .baseUrl(API_URL)
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
 fun apiService(): WeatherAPI =

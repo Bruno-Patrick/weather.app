@@ -6,7 +6,6 @@ import com.example.challenge.domain.repository.WeatherRepository.Companion.dispa
 import com.example.challenge.network.api.API_KEY
 import com.example.challenge.network.api.apiService
 import com.example.challenge.network.dto.WeatherDTO
-import com.example.challenge.network.dto2.Weather2DTO
 
 import kotlinx.coroutines.*
 import retrofit2.Response
@@ -19,15 +18,9 @@ class WeatherRepositoryImpl : WeatherRepository {
     private val daily : String = "weathercode"
     private val timezone : String = "UTC"
 
-    override suspend fun getWeatherDataAsync(lat: Double, long: Double) : Response<WeatherDTO> {
+    override suspend fun getWeatherData(q: String): Response<WeatherDTO> {
         return withContext(dispatcher) {
-            return@withContext apiService.getWeatherData(lat = lat, long = long, hourly = hourly, daily = daily, timezone = timezone)
-        }
-    }
-
-    override suspend fun getWeatherDataWithACityName(q: String): Response<Weather2DTO> {
-        return withContext(dispatcher) {
-            return@withContext apiService.getWeatherDataWithAAPI2(q = q, key = API_KEY, days = 7, lang = "pt")
+            return@withContext apiService.getWeatherData(q = q, key = API_KEY, days = 7, lang = "pt")
         }
     }
 
