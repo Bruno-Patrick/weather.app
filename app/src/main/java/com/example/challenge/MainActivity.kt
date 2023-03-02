@@ -44,13 +44,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupObservers() {
         viewModel.weatherData.observe(this) {
-            it?.let { weather2Model ->
-                binding.locationTemperature.text = weather2Model.current.temp_c.toString()
-                binding.locationName.text = weather2Model.location.name
-                binding.weatherCondition.text = weather2Model.current.condition.text
-                binding.feelslike.text = "${weather2Model.forecast.forecastday[0].day.mintemp_c}°" +
-                        "/${weather2Model.forecast.forecastday[0].day.maxtemp_c}°" +
-                        " Sensação térmica de ${weather2Model.current.feelslike_c}°"
+            it?.let { weatherModel ->
+                binding.locationTemperature.text = weatherModel.current.temp_c.toString()
+                binding.locationName.text = weatherModel.location.name
+                binding.weatherCondition.text = weatherModel.current.condition.text
+                binding.feelslike.text = "${weatherModel.forecast.forecastday[0].day.mintemp_c}°" +
+                        "/${weatherModel.forecast.forecastday[0].day.maxtemp_c}°" +
+                        " Sensação térmica de ${weatherModel.current.feelslike_c}°"
+
+                binding.hojeTemp.text = "${weatherModel.forecast.forecastday[0].day.mintemp_c}° / ${weatherModel.forecast.forecastday[0].day.maxtemp_c}"
+                binding.amanhaTemp.text = "${weatherModel.forecast.forecastday[1].day.mintemp_c}° / ${weatherModel.forecast.forecastday[1].day.maxtemp_c}"
             }
 
         }

@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="weather_black">#0E1218</color>
     <color name="weather_white_pink">#D2BEBE</color>
+    <color name="weather_forecast">#3C3D58</color>
 </resources>

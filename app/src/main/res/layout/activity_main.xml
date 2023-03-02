@@ -67,7 +67,83 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="328dp"
+        android:layout_height="306dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/weather_forecast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feelslike" />
 
+    <TextView
+        android:id="@+id/hoje"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Hoje"
+        android:textSize="14dp"
+        android:textColor="@color/weather_white_pink"
+        app:layout_constraintStart_toStartOf="@+id/gridLayout"
+        app:layout_constraintTop_toTopOf="@+id/gridLayout" />
+
+    <ImageView
+        android:id="@+id/hojeImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toEndOf="@+id/hoje"
+        app:layout_constraintTop_toTopOf="@+id/gridLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="110dp"/>
+
+    <TextView
+        android:id="@+id/hojeTemp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/weather_white_pink"
+        android:textSize="11dp"
+        android:text="10 / 15"
+        app:layout_constraintEnd_toEndOf="@+id/gridLayout"
+        app:layout_constraintStart_toStartOf="@+id/hojeImage"
+        app:layout_constraintTop_toTopOf="@+id/gridLayout" />
+
+    <TextView
+        android:id="@+id/amanha"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:text="Amanhã"
+        android:textSize="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/weather_white_pink"
+        app:layout_constraintStart_toStartOf="@+id/gridLayout"
+        app:layout_constraintTop_toBottomOf="@+id/hoje" />
+
+    <ImageView
+        android:id="@+id/amanhaImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        app:layout_constraintStart_toEndOf="@+id/amanha"
+        app:layout_constraintTop_toBottomOf="@+id/hojeImage" />
+
+    <TextView
+        android:id="@+id/amanhaTemp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="10 / 15"
+        android:textColor="@color/weather_white_pink"
+        android:textSize="11dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/gridLayout"
+        app:layout_constraintStart_toEndOf="@+id/amanhaImage"
+        app:layout_constraintTop_toBottomOf="@+id/hojeTemp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
